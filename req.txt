@@ -1,0 +1,3 @@
+Django
+ffmpeg
+django-storages

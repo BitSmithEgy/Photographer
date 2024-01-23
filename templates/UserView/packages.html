@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/packages.css' %}">
+
+    
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-wrapper">
+                <a class="logo" href="/"> <strong>MD</strong> Mahmoud Diaa </a>
+            </div>
+    
+            <button class="menu-btn" onclick="toggleNav()">
+                <span class="menu-icon"></span>
+            </button>
+    
+            <div class="navbar-links" id="navbar-links">
+                <li class="nav-item"><a class="nav-link active" href="/#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#works">Works</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#services">Portfolios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Packages</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li> -->
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Package section -->
+    <div class="containerr" style="font-weight: 600; font-size: 40px; background: #765F44;">
+        <h1 style="color: #fff; text-transform: capitalize;">packages</h1>
+        <div class="nav">
+            <a href="{% url 'packages' %}">All</a>
+            <a href="{% url 'videography' %}">Videography</a>
+            <a href="{% url 'cinematography' %}">cinematography</a>
+        </div>
+        <div class="packages-container">
+            {% for package in Packages %}
+                <div class="package">
+                    <div>
+                        <img src="{{package.image.url}}" alt="">
+                    </div>
+                    <a href="https://api.whatsapp.com/send?phone=201278554416&text={{ packpackageage.title|urlencode }}" target="_blank">Book Now!</a>
+                </div>
+            {% endfor %}
+    </div>
+
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>

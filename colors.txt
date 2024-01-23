@@ -1,0 +1,4 @@
+#DDC8B0
+#765F44 (headers on light BG, and text)
+#EBD5BB
+#FFFFFF
